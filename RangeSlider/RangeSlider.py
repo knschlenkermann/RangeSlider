@@ -201,8 +201,8 @@ class RangeSliderH(Frame):
 
     def __addTrack(self, startx, starty, endx, endy, posL, posR):
         rangeOutL = self.canv.create_line(startx, starty, startx+posL*(endx-startx), endy, fill = RangeSliderH.LINE_COLOR, width = RangeSliderH.LINE_WIDTH)
-        rangeS = self.canv.create_line(startx+posL*(endx-startx), starty, endx-(1-posR)*(endx-startx), endy, fill = RangeSliderH.LINE_S_COLOR, width = RangeSliderH.LINE_WIDTH)
         rangeOutR = self.canv.create_line(endx-(1-posR)*(endx-startx), starty, endx, endy, fill = RangeSliderH.LINE_COLOR, width = RangeSliderH.LINE_WIDTH)
+        rangeS = self.canv.create_line(startx+posL*(endx-startx), starty, endx-(1-posR)*(endx-startx), endy, fill = RangeSliderH.LINE_S_COLOR, width = RangeSliderH.LINE_WIDTH)
         if self.step_marker:
             markerIDs = self.__addStepMarker()
             return [rangeOutL, rangeS, rangeOutR, markerIDs]
@@ -219,8 +219,8 @@ class RangeSliderH(Frame):
 
     def __addTrackR(self, startx, starty, endx, endy, posL, posR):
         # rangeOutL = self.canv.create_line(startx, starty, startx+posL*(endx-startx), endy, fill = RangeSliderH.LINE_COLOR, width = RangeSliderH.LINE_WIDTH)
-        rangeS = self.canv.create_line(startx+posL*(endx-startx), starty, endx-(1-posR)*(endx-startx), endy, fill = RangeSliderH.LINE_S_COLOR, width = RangeSliderH.LINE_WIDTH)
         rangeOutR = self.canv.create_line(endx-(1-posR)*(endx-startx), starty, endx, endy, fill = RangeSliderH.LINE_COLOR, width = RangeSliderH.LINE_WIDTH)
+        rangeS = self.canv.create_line(startx+posL*(endx-startx), starty, endx-(1-posR)*(endx-startx), endy, fill = RangeSliderH.LINE_S_COLOR, width = RangeSliderH.LINE_WIDTH)
         if self.step_marker:
             markerIDs = self.__addStepMarker()
             return [rangeS, rangeOutR, markerIDs]
@@ -545,8 +545,8 @@ class RangeSliderV(Frame):
 
     def __addTrack(self, startx, starty, endx, endy, posL, posU):
         rangeOutL = self.canv.create_line(startx, starty+(1-posL)*(endy-starty), startx, endy, fill = RangeSliderV.LINE_COLOR, width = RangeSliderV.LINE_WIDTH)
-        rangeS = self.canv.create_line(startx, starty+(1-posU)*(endy-starty), startx, starty+(1-posL)*(endy-starty), fill = RangeSliderV.LINE_S_COLOR, width = RangeSliderV.LINE_WIDTH)
         rangeOutU = self.canv.create_line(startx, starty, endx, starty+(1-posU)*(endy-starty), fill = RangeSliderV.LINE_COLOR, width = RangeSliderV.LINE_WIDTH)
+        rangeS = self.canv.create_line(startx, starty+(1-posU)*(endy-starty), startx, starty+(1-posL)*(endy-starty), fill = RangeSliderV.LINE_S_COLOR, width = RangeSliderV.LINE_WIDTH)
         if self.step_marker:
             markerIDs = self.__addStepMarker()
             return [rangeOutL, rangeS, rangeOutU, markerIDs]
@@ -563,8 +563,8 @@ class RangeSliderV(Frame):
 
     def __addTrackR(self, startx, starty, endx, endy, posL, posU):
         # rangeOutL = self.canv.create_line(startx, starty+(1-posL)*(endy-starty), startx, endy, fill = RangeSliderV.LINE_COLOR, width = RangeSliderV.LINE_WIDTH)
-        rangeS = self.canv.create_line(startx, starty+(1-posU)*(endy-starty), startx, starty+(1-posL)*(endy-starty), fill = RangeSliderV.LINE_S_COLOR, width = RangeSliderV.LINE_WIDTH)
         rangeOutU = self.canv.create_line(startx, starty, endx, starty+(1-posU)*(endy-starty), fill = RangeSliderV.LINE_COLOR, width = RangeSliderV.LINE_WIDTH)
+        rangeS = self.canv.create_line(startx, starty+(1-posU)*(endy-starty), startx, starty+(1-posL)*(endy-starty), fill = RangeSliderV.LINE_S_COLOR, width = RangeSliderV.LINE_WIDTH)
         if self.step_marker:
             markerIDs = self.__addStepMarker()
             return [rangeS, rangeOutU, markerIDs]
